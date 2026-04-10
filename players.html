@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Players - Soccer Verse</title>
+  <link rel="shortcut icon" href="./assets/img/logo/soccerverse-favicon.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+</head>
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="sv-loader">
+    <div class="loader-ball">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="#111418" stroke="#c9a227" stroke-width="3"/>
+        <circle cx="50" cy="50" r="20" fill="none" stroke="#c9a227" stroke-width="2.5" opacity="0.6"/>
+        <line x1="50" y1="2" x2="50" y2="98" stroke="#c9a227" stroke-width="1.5" opacity="0.3"/>
+        <line x1="2" y1="50" x2="98" y2="50" stroke="#c9a227" stroke-width="1.5" opacity="0.3"/>
+        <line x1="15" y1="15" x2="85" y2="85" stroke="#c9a227" stroke-width="1.5" opacity="0.3"/>
+        <line x1="85" y1="15" x2="15" y2="85" stroke="#c9a227" stroke-width="1.5" opacity="0.3"/>
+        <circle cx="50" cy="50" r="7" fill="#c9a227"/>
+      </svg>
+    </div>
+    <div class="loader-shadow"></div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    <div class="loader-text">Soccer Verse</div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand" href="index.html">
+        <img class="logo" src="./assets/img/logo/soccerverse.png" alt="Soccer Verse">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link active" href="players.html">Top Players</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#feedback">Feedback</a></li>
+        </ul>
+        <a href="index.html" class="btn btn-golden ms-3 d-none d-lg-block">Back to Home</a>
+      </div>
+    </div>
+  </nav>
+  <!-- ===== NAVBAR END ===== -->
+
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content text-center">
+      <span class="section-tag">Star Talent</span>
+      <h1 class="page-hero-title">Top Players</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Top Players</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+  <!-- ===== PAGE HERO END ===== -->
+
+
+  <!-- ===== PLAYERS SECTION ===== -->
+  <section class="section-dark py-5">
+    <div class="container">
+
+      <div class="section-header text-center mb-4 reveal from-bottom">
+        <span class="section-tag">Season Roster</span>
+        <h2 class="section-title">Meet the Squad</h2>
+        <p class="section-desc mt-2">24 players. One goal. Browse the full roster of top talent for this season.</p>
+      </div>
+
+      <!-- Search -->
+      <div class="player-search-wrap">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="playerSearch" placeholder="Search player name or position...">
+      </div>
+
+      <!-- Position Filter -->
+      <div class="players-filter-bar">
+        <button class="filter-btn active" data-pos="all">All Positions</button>
+        <button class="filter-btn" data-pos="goalkeeper">Goalkeeper</button>
+        <button class="filter-btn" data-pos="defender">Defender</button>
+        <button class="filter-btn" data-pos="midfielder">Midfielder</button>
+        <button class="filter-btn" data-pos="forward">Forward</button>
+        <button class="filter-btn" data-pos="attacker">Attacker</button>
+      </div>
+
+      <!-- Players Grid -->
+      <div class="row g-4" id="playersGrid"></div>
+      <div class="no-results" id="noResults">
+        <i class="fas fa-search"></i>
+        <h5>No players found</h5>
+        <p>Try a different search or filter.</p>
+      </div>
+
+    </div>
+  </section>
+  <!-- ===== PLAYERS SECTION END ===== -->
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a href="index.html">
+            <img src="./assets/img/logo/soccerverse.png" alt="Soccer Verse" class="footer-logo">
+          </a>
+          <p class="footer-about">Your ultimate destination for live soccer coverage, match statistics, and everything about the beautiful game.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="matches.html">Matches</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="players.html">Players</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-heading">Leagues</h5>
+          <ul class="footer-links">
+            <li><a href="#">Premier League</a></li>
+            <li><a href="#">La Liga</a></li>
+            <li><a href="#">Bundesliga</a></li>
+            <li><a href="#">Serie A</a></li>
+            <li><a href="#">World Cup</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="footer-heading">Latest Score</h5>
+          <div class="footer-score-card">
+            <div class="footer-teams">
+              <img src="./assets/img/card/team-1.png" alt="">
+              <div class="footer-score">3 - 2</div>
+              <img src="./assets/img/card/team-2.png" alt="">
+            </div>
+            <p>Portugal vs Argentina &bull; Full Time</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Soccer Verse. All rights reserved.</p>
+        <div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ===== FOOTER END ===== -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js"></script>
+  <script>
+    // Player data
+    const players = [
+      { num: 1,  name: 'David Johnson',     pos: 'Goalkeeper', team: 'Portugal',  goals: 0,  assists: 0,  rating: 8.1 },
+      { num: 2,  name: 'David Watson',      pos: 'Defender',   team: 'Portugal',  goals: 2,  assists: 5,  rating: 7.6 },
+      { num: 3,  name: 'Alex Mitchell',     pos: 'Midfielder', team: 'Portugal',  goals: 4,  assists: 8,  rating: 7.9 },
+      { num: 4,  name: 'Rúben Dias',        pos: 'Defender',   team: 'Portugal',  goals: 1,  assists: 2,  rating: 8.4 },
+      { num: 5,  name: 'James Miller',      pos: 'Defender',   team: 'Portugal',  goals: 1,  assists: 3,  rating: 7.5 },
+      { num: 6,  name: 'Sophie Williams',   pos: 'Forward',    team: 'Portugal',  goals: 9,  assists: 6,  rating: 8.0 },
+      { num: 7,  name: 'Cristiano Ronaldo', pos: 'Attacker',   team: 'Portugal',  goals: 21, assists: 10, rating: 9.2 },
+      { num: 8,  name: 'Bruno Fernandes',   pos: 'Midfielder', team: 'Portugal',  goals: 12, assists: 14, rating: 8.8 },
+      { num: 9,  name: 'Alex Crumia',       pos: 'Attacker',   team: 'Portugal',  goals: 7,  assists: 4,  rating: 7.7 },
+      { num: 10, name: 'Bernardo Silva',    pos: 'Midfielder', team: 'Portugal',  goals: 8,  assists: 11, rating: 8.5 },
+      { num: 11, name: 'Thomas Green',      pos: 'Goalkeeper', team: 'Argentina', goals: 0,  assists: 0,  rating: 8.0 },
+      { num: 12, name: 'Laura Johnson',     pos: 'Defender',   team: 'Argentina', goals: 1,  assists: 4,  rating: 7.4 },
+      { num: 13, name: 'Ahmed Rahman',      pos: 'Midfielder', team: 'Argentina', goals: 5,  assists: 7,  rating: 7.8 },
+      { num: 14, name: 'Chloe Wilson',      pos: 'Forward',    team: 'Argentina', goals: 8,  assists: 5,  rating: 7.9 },
+      { num: 15, name: 'Sophie Turner',     pos: 'Defender',   team: 'Argentina', goals: 2,  assists: 3,  rating: 7.6 },
+      { num: 16, name: 'Lionel Messi',      pos: 'Attacker',   team: 'Argentina', goals: 24, assists: 18, rating: 9.5 },
+      { num: 17, name: 'Paulo Dybala',      pos: 'Attacker',   team: 'Argentina', goals: 11, assists: 8,  rating: 8.3 },
+      { num: 18, name: 'L. Martínez',       pos: 'Attacker',   team: 'Argentina', goals: 14, assists: 6,  rating: 8.4 },
+      { num: 19, name: 'E. Martínez',       pos: 'Midfielder', team: 'Argentina', goals: 3,  assists: 9,  rating: 8.0 },
+      { num: 20, name: 'Nico González',     pos: 'Midfielder', team: 'Argentina', goals: 6,  assists: 10, rating: 7.9 },
+      { num: 21, name: 'Marco Diaz',        pos: 'Defender',   team: 'Argentina', goals: 0,  assists: 2,  rating: 7.3 },
+      { num: 22, name: 'Carlos Vela',       pos: 'Forward',    team: 'Argentina', goals: 7,  assists: 5,  rating: 7.8 },
+      { num: 23, name: 'Joao Felix',        pos: 'Attacker',   team: 'Portugal',  goals: 10, assists: 7,  rating: 8.1 },
+      { num: 24, name: 'Diogo Jota',        pos: 'Attacker',   team: 'Portugal',  goals: 13, assists: 5,  rating: 8.3 },
+    ];
+
+    let activeFilter = 'all';
+    let searchQuery  = '';
+
+    function positionClass(pos) {
+      return pos.toLowerCase().replace(/ /g, '');
+    }
+
+    function positionIcon(pos) {
+      const p = pos.toLowerCase();
+      if (p.includes('goal'))   return '🧤';
+      if (p.includes('defend')) return '🛡️';
+      if (p.includes('mid'))    return '⚙️';
+      return '⚡';
+    }
+
+    function renderPlayers() {
+      const grid = document.getElementById('playersGrid');
+      const noRes = document.getElementById('noResults');
+      const query = searchQuery.toLowerCase();
+
+      const filtered = players.filter(function (p) {
+        const matchFilter = activeFilter === 'all' || p.pos.toLowerCase().includes(activeFilter);
+        const matchSearch = !query || p.name.toLowerCase().includes(query) || p.pos.toLowerCase().includes(query) || p.team.toLowerCase().includes(query);
+        return matchFilter && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        noRes.style.display = 'block';
+        return;
+      }
+
+      noRes.style.display = 'none';
+      grid.innerHTML = filtered.map(function (p) {
+        return '<div class="col-6 col-md-4 col-lg-3">' +
+          '<div class="player-full-card">' +
+            '<div class="pfc-img">' +
+              '<img src="./assets/img/players/player-' + p.num + '.jpg" alt="' + p.name + '" onerror="this.src=\'Images/logo/soccerverse.png\'">' +
+              '<div class="pfc-number">#' + p.num + '</div>' +
+              '<div class="pfc-team-badge">' + p.team + '</div>' +
+            '</div>' +
+            '<div class="pfc-body">' +
+              '<div class="pfc-name">' + p.name + '</div>' +
+              '<div class="pfc-position">' + positionIcon(p.pos) + ' ' + p.pos + '</div>' +
+              '<div class="pfc-stats">' +
+                '<div class="pfc-stat"><span class="pfc-stat-val">' + p.goals + '</span><span class="pfc-stat-key">Goals</span></div>' +
+                '<div class="pfc-stat"><span class="pfc-stat-val">' + p.assists + '</span><span class="pfc-stat-key">Assists</span></div>' +
+                '<div class="pfc-stat"><span class="pfc-stat-val">' + p.rating + '</span><span class="pfc-stat-key">Rating</span></div>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+    }
+
+    // Filter buttons
+    document.querySelectorAll('.filter-btn[data-pos]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.filter-btn[data-pos]').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        activeFilter = this.getAttribute('data-pos');
+        renderPlayers();
+      });
+    });
+
+    // Search
+    document.getElementById('playerSearch').addEventListener('input', function () {
+      searchQuery = this.value;
+      renderPlayers();
+    });
+
+    // Initial render
+    renderPlayers();
+  </script>
+</body>
+</html>

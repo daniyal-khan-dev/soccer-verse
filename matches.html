@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matches - Soccer Verse</title>
+  <link rel="shortcut icon" href="./assets/img/logo/soccerverse-favicon.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+</head>
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="sv-loader">
+    <div class="loader-ball">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="#111418" stroke="#c9a227" stroke-width="3"/>
+        <circle cx="50" cy="50" r="20" fill="none" stroke="#c9a227" stroke-width="2.5" opacity="0.6"/>
+        <line x1="50" y1="2" x2="50" y2="98" stroke="#c9a227" stroke-width="1.5" opacity="0.3"/>
+        <line x1="2" y1="50" x2="98" y2="50" stroke="#c9a227" stroke-width="1.5" opacity="0.3"/>
+        <line x1="15" y1="15" x2="85" y2="85" stroke="#c9a227" stroke-width="1.5" opacity="0.3"/>
+        <line x1="85" y1="15" x2="15" y2="85" stroke="#c9a227" stroke-width="1.5" opacity="0.3"/>
+        <circle cx="50" cy="50" r="7" fill="#c9a227"/>
+      </svg>
+    </div>
+    <div class="loader-shadow"></div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    <div class="loader-text">Soccer Verse</div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand" href="index.html">
+        <img class="logo" src="./assets/img/logo/soccerverse.png" alt="Soccer Verse">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="matches.html">Matches</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="players.html">Top Players</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#feedback">Feedback</a></li>
+        </ul>
+        <a href="index.html" class="btn btn-golden ms-3 d-none d-lg-block">Back to Home</a>
+      </div>
+    </div>
+  </nav>
+  <!-- ===== NAVBAR END ===== -->
+
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content text-center">
+      <span class="section-tag">Live &amp; Upcoming</span>
+      <h1 class="page-hero-title">Matches</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Matches</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+  <!-- ===== PAGE HERO END ===== -->
+
+
+  <!-- ===== TODAY'S MATCH RESULT ===== -->
+  <section class="section-dark py-5">
+    <div class="container">
+      <div class="section-header text-center mb-5 reveal from-bottom">
+        <span class="section-tag">Full Time</span>
+        <h2 class="section-title">Today's Match Result</h2>
+      </div>
+      <div class="match-result-card">
+        <div class="match-result-badge">FINAL</div>
+        <div class="match-teams">
+          <div class="match-team">
+            <img src="./assets/img/card/team-1.png" alt="Portugal">
+            <h3 class="team-name">Portugal</h3>
+            <span class="team-status win">WIN</span>
+            <ul class="player-list">
+              <li><i class="fas fa-user"></i> Cristiano Ronaldo <span class="jersey">#7</span></li>
+              <li><i class="fas fa-user"></i> Bernardo Silva <span class="jersey">#10</span></li>
+              <li><i class="fas fa-user"></i> Rúben Dias <span class="jersey">#4</span></li>
+              <li><i class="fas fa-user"></i> Bruno Fernandes <span class="jersey">#8</span></li>
+            </ul>
+          </div>
+          <div class="match-score-center">
+            <div class="match-score">3 <span class="score-sep">-</span> 2</div>
+            <div class="match-meta">
+              <span><i class="fas fa-calendar"></i> April 9, 2026</span>
+              <span><i class="fas fa-map-marker-alt"></i> New Euro Arena</span>
+              <span><i class="fas fa-trophy"></i> World Cup Qualifier</span>
+            </div>
+          </div>
+          <div class="match-team">
+            <img src="./assets/img/card/team-2.png" alt="Argentina">
+            <h3 class="team-name">Argentina</h3>
+            <span class="team-status lose">LOSE</span>
+            <ul class="player-list">
+              <li><i class="fas fa-user"></i> Lionel Messi <span class="jersey">#10</span></li>
+              <li><i class="fas fa-user"></i> Paulo Dybala <span class="jersey">#21</span></li>
+              <li><i class="fas fa-user"></i> L. Martínez <span class="jersey">#22</span></li>
+              <li><i class="fas fa-user"></i> E. Martínez <span class="jersey">#23</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== TODAY'S MATCH RESULT END ===== -->
+
+
+  <!-- ===== NEXT MATCH ===== -->
+  <section class="section-darker py-5" id="next-match">
+    <div class="container">
+      <div class="section-header text-center mb-5 reveal from-bottom">
+        <span class="section-tag">Coming Up</span>
+        <h2 class="section-title">Next Match</h2>
+      </div>
+      <div class="next-match-card reveal scale-up">
+        <div class="next-match-league">
+          <i class="fas fa-trophy"></i> World Cup League
+        </div>
+        <div class="next-match-body">
+          <div class="next-match-team text-center">
+            <img src="./assets/img/card/team-1.png" alt="Portugal">
+            <h3>Portugal</h3>
+            <ul class="list-unstyled2">
+              <li>Cristiano Ronaldo (7)</li>
+              <li>Bernardo Silva (10)</li>
+              <li>Rúben Dias (4)</li>
+              <li>Bruno Fernandes (8)</li>
+            </ul>
+          </div>
+          <div class="next-match-vs-center">
+            <div class="vs-badge"><span>VS</span></div>
+            <div class="next-match-info">
+              <p><i class="fas fa-calendar-alt"></i> July 20th, 2026</p>
+              <p><i class="fas fa-clock"></i> 9:30 AM GMT+0</p>
+              <p><i class="fas fa-map-marker-alt"></i> New Euro Arena</p>
+            </div>
+            <div id="countdown">
+              <h5>Countdown</h5>
+              <ul>
+                <li><span id="days"></span><small>Days</small></li>
+                <li><span id="hours"></span><small>Hours</small></li>
+                <li><span id="minutes"></span><small>Mins</small></li>
+                <li><span id="seconds"></span><small>Secs</small></li>
+              </ul>
+            </div>
+          </div>
+          <div class="next-match-team text-center">
+            <img src="./assets/img/card/team-2.png" alt="Argentina">
+            <h3>Argentina</h3>
+            <ul class="list-unstyled2">
+              <li>Lionel Messi (10)</li>
+              <li>Paulo Dybala (21)</li>
+              <li>L. Martínez (22)</li>
+              <li>E. Martínez (23)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===== NEXT MATCH END ===== -->
+
+
+  <!-- ===== UPCOMING MATCHES ===== -->
+  <section class="section-dark py-5" id="upcoming">
+    <div class="container">
+      <div class="section-header mb-4 reveal from-bottom">
+        <span class="section-tag">Schedule</span>
+        <h2 class="section-title">Upcoming Matches</h2>
+      </div>
+      <div class="row g-4 stagger">
+
+        <div class="col-lg-6">
+          <div class="upcoming-match-card reveal from-bottom">
+            <div class="upcoming-match-label">Match 1</div>
+            <div class="upcoming-teams">
+              <div class="text-center">
+                <img src="./assets/img/card/img1.png" alt="Team A">
+                <p>FC Barcelona</p>
+              </div>
+              <div class="upcoming-vs"><span>VS</span></div>
+              <div class="text-center">
+                <img src="./assets/img/card/img2.png" alt="Team B">
+                <p>Real Madrid</p>
+              </div>
+            </div>
+            <div class="upcoming-info">
+              <span><i class="fas fa-calendar"></i> September 1, 2026</span>
+              <span><i class="fas fa-clock"></i> 9:30 AM GMT+0</span>
+              <span><i class="fas fa-map-marker-alt"></i> New Euro Arena</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="upcoming-match-card">
+            <div class="upcoming-match-label">Match 2</div>
+            <div class="upcoming-teams">
+              <div class="text-center">
+                <img src="./assets/img/card/img3.png" alt="Team C">
+                <p>Bayern Munich</p>
+              </div>
+              <div class="upcoming-vs"><span>VS</span></div>
+              <div class="text-center">
+                <img src="./assets/img/card/img4.png" alt="Team D">
+                <p>Man City</p>
+              </div>
+            </div>
+            <div class="upcoming-info">
+              <span><i class="fas fa-calendar"></i> September 20, 2026</span>
+              <span><i class="fas fa-clock"></i> 9:30 AM GMT+0</span>
+              <span><i class="fas fa-map-marker-alt"></i> New Euro Arena</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="upcoming-match-card">
+            <div class="upcoming-match-label">Match 3</div>
+            <div class="upcoming-teams">
+              <div class="text-center">
+                <img src="./assets/img/card/img2.png" alt="Team E">
+                <p>Liverpool FC</p>
+              </div>
+              <div class="upcoming-vs"><span>VS</span></div>
+              <div class="text-center">
+                <img src="./assets/img/card/img1.png" alt="Team F">
+                <p>Arsenal FC</p>
+              </div>
+            </div>
+            <div class="upcoming-info">
+              <span><i class="fas fa-calendar"></i> October 5, 2026</span>
+              <span><i class="fas fa-clock"></i> 9:30 AM GMT+0</span>
+              <span><i class="fas fa-map-marker-alt"></i> New Euro Arena</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="upcoming-match-card">
+            <div class="upcoming-match-label">Match 4</div>
+            <div class="upcoming-teams">
+              <div class="text-center">
+                <img src="./assets/img/card/img4.png" alt="Team G">
+                <p>Inter Milan</p>
+              </div>
+              <div class="upcoming-vs"><span>VS</span></div>
+              <div class="text-center">
+                <img src="./assets/img/card/img3.png" alt="Team H">
+                <p>Juventus</p>
+              </div>
+            </div>
+            <div class="upcoming-info">
+              <span><i class="fas fa-calendar"></i> October 15, 2026</span>
+              <span><i class="fas fa-clock"></i> 9:30 AM GMT+0</span>
+              <span><i class="fas fa-map-marker-alt"></i> New Euro Arena</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ===== UPCOMING MATCHES END ===== -->
+
+
+  <!-- ===== MATCH INFORMATION TABS ===== -->
+  <section class="section-darker py-5" id="match-info">
+    <div class="container">
+      <div class="section-header text-center mb-4 reveal from-bottom">
+        <span class="section-tag">Data &amp; Analytics</span>
+        <h2 class="section-title">Match Information</h2>
+      </div>
+
+      <nav class="nav match-tabs justify-content-center mb-4">
+        <a href="#tab-league" data-bs-toggle="tab" class="match-tab-link active">
+          <i class="fas fa-table"></i> League Table
+        </a>
+        <a href="#tab-lineup" data-bs-toggle="tab" class="match-tab-link">
+          <i class="fas fa-users"></i> Line Up
+        </a>
+        <a href="#tab-stats" data-bs-toggle="tab" class="match-tab-link">
+          <i class="fas fa-chart-bar"></i> Statistics
+        </a>
+        <a href="#tab-results" data-bs-toggle="tab" class="match-tab-link">
+          <i class="fas fa-list"></i> Match Results
+        </a>
+      </nav>
+
+      <div class="tab-content">
+
+        <!-- League Table -->
+        <div class="tab-pane active" id="tab-league">
+          <div class="table-card">
+            <h4 class="table-card-title"><i class="fas fa-trophy"></i> Premium League Table</h4>
+            <div class="table-responsive">
+              <table class="table sv-table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Team</th>
+                    <th>League</th>
+                    <th>Played</th>
+                    <th>W</th>
+                    <th>L</th>
+                    <th>D</th>
+                    <th>Goals</th>
+                    <th>PTS</th>
+                  </tr>
+                </thead>
+                <tbody id="leagueTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Line Up -->
+        <div class="tab-pane" id="tab-lineup">
+          <div class="row g-4">
+            <div class="col-lg-6">
+              <div class="lineup-card">
+                <div class="lineup-header">
+                  <img src="./assets/img/card/team-1.png" alt="Portugal">
+                  <h4>Portugal</h4>
+                </div>
+                <table class="table sv-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Player</th>
+                      <th>Position</th>
+                    </tr>
+                  </thead>
+                  <tbody id="lineup1Body"></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="lineup-card">
+                <div class="lineup-header">
+                  <img src="./assets/img/card/team-2.png" alt="Argentina">
+                  <h4>Argentina</h4>
+                </div>
+                <table class="table sv-table">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Player</th>
+                      <th>Position</th>
+                    </tr>
+                  </thead>
+                  <tbody id="lineup2Body"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Match Statistics -->
+        <div class="tab-pane" id="tab-stats">
+          <div class="stats-grid" id="statsGrid"></div>
+        </div>
+
+        <!-- Match Results -->
+        <div class="tab-pane" id="tab-results">
+          <div class="results-list">
+            <div class="result-row">
+              <div class="result-teams">
+                <span class="result-team"><img src="./assets/img/card/team-1.png" alt=""> Portugal</span>
+                <span class="result-score win-score">3 - 2</span>
+                <span class="result-team right"><img src="./assets/img/card/team-2.png" alt=""> Argentina</span>
+              </div>
+              <div class="result-meta">
+                <span><i class="fas fa-calendar"></i> April 9, 2026</span>
+                <span><i class="fas fa-trophy"></i> World Cup Qualifier</span>
+                <span class="result-badge full-time">Full Time</span>
+              </div>
+            </div>
+            <div class="result-row">
+              <div class="result-teams">
+                <span class="result-team"><img src="./assets/img/card/img1.png" alt=""> FC Barcelona</span>
+                <span class="result-score">1 - 1</span>
+                <span class="result-team right"><img src="./assets/img/card/img2.png" alt=""> Real Madrid</span>
+              </div>
+              <div class="result-meta">
+                <span><i class="fas fa-calendar"></i> March 22, 2026</span>
+                <span><i class="fas fa-trophy"></i> La Liga</span>
+                <span class="result-badge full-time">Full Time</span>
+              </div>
+            </div>
+            <div class="result-row">
+              <div class="result-teams">
+                <span class="result-team"><img src="./assets/img/card/img3.png" alt=""> Bayern Munich</span>
+                <span class="result-score win-score">4 - 0</span>
+                <span class="result-team right"><img src="./assets/img/card/img4.png" alt=""> Dortmund</span>
+              </div>
+              <div class="result-meta">
+                <span><i class="fas fa-calendar"></i> March 15, 2026</span>
+                <span><i class="fas fa-trophy"></i> Bundesliga</span>
+                <span class="result-badge full-time">Full Time</span>
+              </div>
+            </div>
+            <div class="result-row">
+              <div class="result-teams">
+                <span class="result-team"><img src="./assets/img/card/img2.png" alt=""> Liverpool</span>
+                <span class="result-score win-score">2 - 1</span>
+                <span class="result-team right"><img src="./assets/img/card/img1.png" alt=""> Arsenal</span>
+              </div>
+              <div class="result-meta">
+                <span><i class="fas fa-calendar"></i> March 8, 2026</span>
+                <span><i class="fas fa-trophy"></i> Premier League</span>
+                <span class="result-badge full-time">Full Time</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ===== MATCH INFORMATION TABS END ===== -->
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a href="index.html">
+            <img src="./assets/img/logo/soccerverse.png" alt="Soccer Verse" class="footer-logo">
+          </a>
+          <p class="footer-about">Your ultimate destination for live soccer coverage, match statistics, and everything about the beautiful game.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="matches.html">Matches</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#players">Players</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-heading">Leagues</h5>
+          <ul class="footer-links">
+            <li><a href="#">Premier League</a></li>
+            <li><a href="#">La Liga</a></li>
+            <li><a href="#">Bundesliga</a></li>
+            <li><a href="#">Serie A</a></li>
+            <li><a href="#">World Cup</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="footer-heading">Latest Score</h5>
+          <div class="footer-score-card">
+            <div class="footer-teams">
+              <img src="./assets/img/card/team-1.png" alt="">
+              <div class="footer-score">3 - 2</div>
+              <img src="./assets/img/card/team-2.png" alt="">
+            </div>
+            <p>Portugal vs Argentina &bull; Full Time</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Soccer Verse. All rights reserved.</p>
+        <div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ===== FOOTER END ===== -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>

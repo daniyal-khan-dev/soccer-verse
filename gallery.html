@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Soccer Verse</title>
+  <link rel="shortcut icon" href="./assets/img/logo/soccerverse-favicon.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/animations.css">
+</head>
+<body>
+
+  <!-- PAGE LOADER -->
+  <div id="sv-loader">
+    <div class="loader-ball">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="#111418" stroke="#c9a227" stroke-width="3"/>
+        <circle cx="50" cy="50" r="20" fill="none" stroke="#c9a227" stroke-width="2.5" opacity="0.6"/>
+        <line x1="50" y1="2" x2="50" y2="98" stroke="#c9a227" stroke-width="1.5" opacity="0.3"/>
+        <line x1="2" y1="50" x2="98" y2="50" stroke="#c9a227" stroke-width="1.5" opacity="0.3"/>
+        <line x1="15" y1="15" x2="85" y2="85" stroke="#c9a227" stroke-width="1.5" opacity="0.3"/>
+        <line x1="85" y1="15" x2="15" y2="85" stroke="#c9a227" stroke-width="1.5" opacity="0.3"/>
+        <circle cx="50" cy="50" r="7" fill="#c9a227"/>
+      </svg>
+    </div>
+    <div class="loader-shadow"></div>
+    <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    <div class="loader-text">Soccer Verse</div>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand" href="index.html">
+        <img class="logo" src="./assets/img/logo/soccerverse.png" alt="Soccer Verse">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="matches.html">Matches</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="players.html">Top Players</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#feedback">Feedback</a></li>
+        </ul>
+        <a href="index.html" class="btn btn-golden ms-3 d-none d-lg-block">Back to Home</a>
+      </div>
+    </div>
+  </nav>
+  <!-- ===== NAVBAR END ===== -->
+
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content text-center">
+      <span class="section-tag">Visual Stories</span>
+      <h1 class="page-hero-title">Gallery</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Gallery</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+  <!-- ===== PAGE HERO END ===== -->
+
+
+  <!-- ===== GALLERY SECTION ===== -->
+  <section class="section-dark py-5">
+    <div class="container">
+
+      <div class="section-header text-center mb-4 reveal from-bottom">
+        <span class="section-tag">All Photos</span>
+        <h2 class="section-title">Moments from the Pitch</h2>
+        <p class="section-desc mt-2">Browse through match action shots, team photos, and stadium highlights.</p>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar reveal from-bottom">
+        <button class="filter-btn active" data-filter="all">All Photos</button>
+        <button class="filter-btn" data-filter="action">Match Action</button>
+        <button class="filter-btn" data-filter="teams">Teams</button>
+        <button class="filter-btn" data-filter="stadium">Stadium</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-full-grid" id="galleryGrid">
+
+        <div class="gallery-item" data-category="action" data-index="0">
+          <img src="./assets/img/banner/Banner.jpg" alt="Match Action">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="teams" data-index="1">
+          <img src="./assets/img/team/img1.jfif" alt="Team Photo">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="action" data-index="2">
+          <img src="./assets/img/team/img2.png" alt="Goal Moment">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="teams" data-index="3">
+          <img src="./assets/img/team/img3.jfif" alt="Team Celebration">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="stadium" data-index="4">
+          <img src="./assets/img/team/img4.png" alt="Stadium View">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="action" data-index="5">
+          <img src="./assets/img/team/img5.jfif" alt="Match Highlight">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="teams" data-index="6">
+          <img src="./assets/img/team/img6.jfif" alt="Players Together">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="stadium" data-index="7">
+          <img src="./assets/img/team/img7.png" alt="Arena">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="teams" data-index="8">
+          <img src="./assets/img/team/team1.png" alt="Team 1">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="teams" data-index="9">
+          <img src="./assets/img/team/team2.png" alt="Team 2">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="teams" data-index="10">
+          <img src="./assets/img/team/team3.png" alt="Team 3">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="teams" data-index="11">
+          <img src="./assets/img/team/team4.png" alt="Team 4">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="action" data-index="12">
+          <img src="./assets/img/about/about-1.jpg" alt="Soccer Action">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="action" data-index="13">
+          <img src="./assets/img/about/about-2.jpg" alt="Soccer Moment">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="stadium" data-index="14">
+          <img src="./assets/img/banner/footer.jfif" alt="Arena Photo">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+        <div class="gallery-item" data-category="action" data-index="15">
+          <img src="./assets/img/stats/stats.jpg" alt="Match Stats">
+          <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ===== GALLERY SECTION END ===== -->
+
+
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+    <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <a href="index.html">
+            <img src="./assets/img/logo/soccerverse.png" alt="Soccer Verse" class="footer-logo">
+          </a>
+          <p class="footer-about">Your ultimate destination for live soccer coverage, match statistics, and everything about the beautiful game.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="matches.html">Matches</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="players.html">Players</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-heading">Leagues</h5>
+          <ul class="footer-links">
+            <li><a href="#">Premier League</a></li>
+            <li><a href="#">La Liga</a></li>
+            <li><a href="#">Bundesliga</a></li>
+            <li><a href="#">Serie A</a></li>
+            <li><a href="#">World Cup</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="footer-heading">Latest Score</h5>
+          <div class="footer-score-card">
+            <div class="footer-teams">
+              <img src="./assets/img/card/team-1.png" alt="">
+              <div class="footer-score">3 - 2</div>
+              <img src="./assets/img/card/team-2.png" alt="">
+            </div>
+            <p>Portugal vs Argentina &bull; Full Time</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Soccer Verse. All rights reserved.</p>
+        <div>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ===== FOOTER END ===== -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="./assets/js/script.js"></script>
+  <script>
+    // ===== FILTER =====
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        const filter = this.getAttribute('data-filter');
+        galleryItems.forEach(function (item) {
+          const cat = item.getAttribute('data-category');
+          item.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+        });
+      });
+    });
+
+    // ===== LIGHTBOX =====
+    const lightbox     = document.getElementById('lightbox');
+    const lightboxImg  = document.getElementById('lightboxImg');
+    const lightboxCap  = document.getElementById('lightboxCaption');
+    let visibleItems   = [];
+    let currentIdx     = 0;
+
+    function getVisible() {
+      return Array.from(galleryItems).filter(item => item.style.display !== 'none');
+    }
+
+    function openLightbox(item) {
+      visibleItems = getVisible();
+      currentIdx   = visibleItems.indexOf(item);
+      showSlide(currentIdx);
+      lightbox.classList.add('open');
+    }
+
+    function showSlide(idx) {
+      const item = visibleItems[idx];
+      if (!item) return;
+      const img  = item.querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCap.textContent = img.alt + ' — ' + (idx + 1) + ' / ' + visibleItems.length;
+    }
+
+    galleryItems.forEach(function (item) {
+      item.addEventListener('click', function () { openLightbox(item); });
+    });
+
+    document.getElementById('lightboxClose').addEventListener('click', function () {
+      lightbox.classList.remove('open');
+    });
+
+    document.getElementById('lightboxPrev').addEventListener('click', function () {
+      currentIdx = (currentIdx - 1 + visibleItems.length) % visibleItems.length;
+      showSlide(currentIdx);
+    });
+
+    document.getElementById('lightboxNext').addEventListener('click', function () {
+      currentIdx = (currentIdx + 1) % visibleItems.length;
+      showSlide(currentIdx);
+    });
+
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) lightbox.classList.remove('open');
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') lightbox.classList.remove('open');
+      if (e.key === 'ArrowLeft')  { currentIdx = (currentIdx - 1 + visibleItems.length) % visibleItems.length; showSlide(currentIdx); }
+      if (e.key === 'ArrowRight') { currentIdx = (currentIdx + 1) % visibleItems.length; showSlide(currentIdx); }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+/* ============================================
+   SOCCER VERSE — ANIMATIONS & LOADER
+   ============================================ */
+
+/* ===== PAGE LOADER ===== */
+#sv-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #0a0c10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#sv-loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-ball {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  animation: loaderBounce 0.8s ease-in-out infinite alternate;
+}
+
+.loader-ball svg {
+  width: 100%;
+  height: 100%;
+  animation: loaderSpin 1s linear infinite;
+}
+
+.loader-shadow {
+  width: 40px;
+  height: 8px;
+  background: rgba(201,162,39,0.3);
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: loaderShadow 0.8s ease-in-out infinite alternate;
+  filter: blur(2px);
+}
+
+.loader-bar {
+  width: 160px;
+  height: 3px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.loader-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #c9a227, #f0c84a, #c9a227);
+  background-size: 200% 100%;
+  border-radius: 10px;
+  animation: loaderBar 1.2s ease-in-out infinite;
+}
+
+.loader-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+}
+
+@keyframes loaderBounce {
+  from { transform: translateY(0);   }
+  to   { transform: translateY(-24px); }
+}
+
+@keyframes loaderSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes loaderShadow {
+  from { transform: scale(1);    opacity: 0.4; }
+  to   { transform: scale(0.6); opacity: 0.15; }
+}
+
+@keyframes loaderBar {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+
+/* ===== SCROLL REVEAL BASE ===== */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.from-bottom { transform: translateY(40px); }
+.reveal.from-left   { transform: translateX(-40px); }
+.reveal.from-right  { transform: translateX(40px); }
+.reveal.from-top    { transform: translateY(-30px); }
+.reveal.scale-up    { transform: scale(0.92); }
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delays for child items */
+.stagger > *:nth-child(1)  { transition-delay: 0.05s; }
+.stagger > *:nth-child(2)  { transition-delay: 0.12s; }
+.stagger > *:nth-child(3)  { transition-delay: 0.19s; }
+.stagger > *:nth-child(4)  { transition-delay: 0.26s; }
+.stagger > *:nth-child(5)  { transition-delay: 0.33s; }
+.stagger > *:nth-child(6)  { transition-delay: 0.40s; }
+.stagger > *:nth-child(7)  { transition-delay: 0.47s; }
+.stagger > *:nth-child(8)  { transition-delay: 0.54s; }
+
+
+/* ===== NAVBAR ENTRANCE ===== */
+#mainNav {
+  animation: navSlideDown 0.6s ease 0.3s both;
+}
+
+@keyframes navSlideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
+}
+
+
+/* ===== HERO CONTENT ENTRANCE ===== */
+.hero-content .hero-sub   { animation: heroFadeUp 0.6s ease 0.5s both; }
+.hero-content .hero-title { animation: heroFadeUp 0.7s ease 0.7s both; }
+.hero-content .hero-desc  { animation: heroFadeUp 0.7s ease 0.9s both; }
+.hero-content .hero-actions { animation: heroFadeUp 0.7s ease 1.1s both; }
+.hero-scroll-hint { animation: heroFadeUp 0.7s ease 1.4s both; }
+
+.page-hero-content .section-tag  { animation: heroFadeUp 0.6s ease 0.5s both; }
+.page-hero-content .page-hero-title { animation: heroFadeUp 0.7s ease 0.7s both; }
+.page-hero-content .breadcrumb   { animation: heroFadeUp 0.6s ease 0.9s both; }
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ===== STATS BAR COUNTER PULSE ===== */
+.stat-number {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover .stat-number {
+  transform: scale(1.1);
+  color: #000;
+}
+
+
+/* ===== CARD HOVER LIFT (global) ===== */
+.match-result-card,
+.next-match-card,
+.upcoming-match-card,
+.player-card,
+.player-full-card,
+.highlight-stat-card,
+.stat-card,
+.result-row,
+.form-card,
+.lineup-card,
+.table-card {
+  will-change: transform;
+}
+
+
+/* ===== GOLD SHIMMER on section-tag ===== */
+.section-tag {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-tag::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  animation: shimmer 3s ease infinite;
+}
+
+@keyframes shimmer {
+  0%   { left: -60%; }
+  60%  { left: 120%; }
+  100% { left: 120%; }
+}
+
+
+/* ===== PULSE on countdown numbers ===== */
+#countdown li span {
+  display: block;
+  animation: countPulse 1s ease infinite alternate;
+}
+
+@keyframes countPulse {
+  from { color: #f0f0f0; }
+  to   { color: var(--gold-light, #f0c84a); }
+}
+
+
+/* ===== SCORE animate-in ===== */
+.match-score {
+  animation: scorePop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.2s both;
+}
+
+@keyframes scorePop {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+
+/* ===== ACTIVE TAB underline slide ===== */
+.match-tab-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.match-tab-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--gold, #c9a227);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.match-tab-link:not(.active):hover::before {
+  width: 60%;
+}
+
+
+/* ===== FOOTER LINK hover arrow ===== */
+.footer-links a::before {
+  content: '→ ';
+  opacity: 0;
+  margin-right: 0;
+  transition: opacity 0.2s ease, margin-right 0.2s ease;
+}
+
+.footer-links a:hover::before {
+  opacity: 1;
+  margin-right: 4px;
+}
+
+
+/* ===== NAV LINK indicator dot ===== */
+.navbar-nav .nav-link {
+  position: relative;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--gold, #c9a227);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 50%;
+}
+
+
+/* ===== Gallery item fade-in on load ===== */
+.gallery-item {
+  animation: galleryReveal 0.5s ease both;
+}
+
+.gallery-full-grid .gallery-item:nth-child(1)  { animation-delay: 0.05s; }
+.gallery-full-grid .gallery-item:nth-child(2)  { animation-delay: 0.10s; }
+.gallery-full-grid .gallery-item:nth-child(3)  { animation-delay: 0.15s; }
+.gallery-full-grid .gallery-item:nth-child(4)  { animation-delay: 0.20s; }
+.gallery-full-grid .gallery-item:nth-child(5)  { animation-delay: 0.25s; }
+.gallery-full-grid .gallery-item:nth-child(6)  { animation-delay: 0.30s; }
+.gallery-full-grid .gallery-item:nth-child(7)  { animation-delay: 0.35s; }
+.gallery-full-grid .gallery-item:nth-child(8)  { animation-delay: 0.40s; }
+.gallery-full-grid .gallery-item:nth-child(9)  { animation-delay: 0.45s; }
+.gallery-full-grid .gallery-item:nth-child(10) { animation-delay: 0.50s; }
+.gallery-full-grid .gallery-item:nth-child(11) { animation-delay: 0.55s; }
+.gallery-full-grid .gallery-item:nth-child(12) { animation-delay: 0.60s; }
+.gallery-full-grid .gallery-item:nth-child(13) { animation-delay: 0.65s; }
+.gallery-full-grid .gallery-item:nth-child(14) { animation-delay: 0.70s; }
+.gallery-full-grid .gallery-item:nth-child(15) { animation-delay: 0.75s; }
+.gallery-full-grid .gallery-item:nth-child(16) { animation-delay: 0.80s; }
+
+@keyframes galleryReveal {
+  from { opacity: 0; transform: scale(0.94) translateY(12px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+
+/* ===== Respect reduced motion preference ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

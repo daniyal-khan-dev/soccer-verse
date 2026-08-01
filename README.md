@@ -133,14 +133,15 @@ soccer-verse/
 ## 👨‍💻 Author
 
 **Daniyal Khan**
-- Protfolio: https://daniyal-khan.com/
+- Portfolio: https://daniyal-khan.com/
 - GitHub: https://github.com/daniyal-khan-dev
 - LinkedIn: www.linkedin.com/in/m-daniyal-khan
-- Email: daniyalkhan0445@gmail.com
+- Email: info@daniyal-khan.com
 
 ## 📞 Support
 
 If you have any questions or need help, please:
+- Open on Portfolio
 - Open an issue on GitHub
 - Contact via email
 - Connect on LinkedIn
